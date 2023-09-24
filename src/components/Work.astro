@@ -1,0 +1,25 @@
+---
+import WorkCard from "./WorkCard.astro";
+import data from "../data/WorkData";
+---
+
+<section class="pt-8 md:pt-16" id="work">
+  <h1 class="heading-1 text-center mb-10 md:mb-16">My Work</h1>
+  <div class="flex flex-col gap-16">
+    {
+      data.map((info, idx) => {
+        return (
+          <WorkCard
+            idx={idx}
+            title={info.title}
+            techStack={info.techStack}
+            description={info.description}
+            image={info.image}
+            siteUrl={info.siteUrl}
+            codeUrl={info.codeUrl}
+          />
+        );
+      })
+    }
+  </div>
+</section>

@@ -1,0 +1,112 @@
+/* Colors */
+
+/*
+First Iteration versions
+--bg-color: #d3d3d3;
+--text-color: #454545;
+--complementary-color: #FF6000;
+
+Beige with red
+--bg-color: #efe1d1;
+--text-color: #16252b;
+--complementary-color: rgb(86, 6, 86);
+
+Beige with blue - quite good
+--bg-color: #EAE3D2;
+--text-color: #1C3879;
+--complementary-color: #607EAA;
+
+Grayish color scheme
+--bg-color: #C9D6DF;
+--text-color: #1E2022;
+--complementary-color: #52616B;
+*/
+
+:root {
+  --bg-color-light: #eae3d2;
+  --bg-color-dark: #1e202a;
+  --bg-color-secondary-light: #e9e5e1;
+  --bg-color-secondary-dark: #313134;
+  --text-color-light: #1c3879;
+  --text-color-dark: #eae3d2;
+  --complementary-color: #607eaa;
+}
+
+body.dark {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --bg-color-secondary: var(--bg-color-secondary-dark);
+}
+
+body.light {
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --bg-color-secondary: var(--bg-color-secondary-light);
+}
+
+/* Fonts */
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Added this font for some weird reasons but then dropped the idea. Just kept it for some weird reasons aswell */
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "IBM Plex Sans", sans-serif;
+
+  @media (min-width: 640px) {
+    font-size: 18px;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Typography */
+
+ul > li > a {
+  @apply uppercase font-semibold cursor-pointer hover:underline underline-offset-8;
+}
+
+.heading-1 {
+  @apply text-xl sm:text-3xl font-semibold;
+}
+
+.heading-2 {
+  @apply text-base sm:text-xl font-semibold;
+}
+
+.span {
+  @apply font-bold;
+}
+
+.button {
+  @apply bg-[var(--complementary-color)] text-[var(--bg-color)] rounded-lg  px-4 py-2 w-40;
+}
+
+.formInputs {
+  @apply bg-[var(--bg-color-secondary)] border border-[var(--complementary-color)] outline-[var(--complementary-color)] focus:outline-none rounded-lg px-4 py-2;
+}
