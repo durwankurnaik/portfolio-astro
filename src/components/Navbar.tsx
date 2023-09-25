@@ -98,7 +98,7 @@ const Navbar = () => {
             h-screen 
             bg-[var(--bg-color)]
             z-10
-          "
+            "
           >
             <For each={Routes}>
               {(route) => (

@@ -21,7 +21,10 @@ const allPosts = await Astro.glob("./posts/*.md");
           >
             <a href={post.url}>{post.frontmatter.title}</a>
           </h1>
-          <span transition:name="date" class="date flex items-center gap-2">
+          <span
+            transition:name="date"
+            class="flex items-center gap-2 font-semibold"
+          >
             <VsCalendar /> Posted on: {post.frontmatter.pubDate}
           </span>
           <span transition:name="description" class="span">
