@@ -19,7 +19,7 @@ Well, for a developer, they need to showcase their work on the internet and most
 
 <h2 class="heading-2">My Experience with Astro</h2>
 
-Well, building this site was not that hard because I just migrated it from Next.JS and before I was using tailwind to style my components so it was mostly just copy-paste. It was piece of cake because Astro has great integration for other frameworks. It took me about 1 day to complete the migration from Next.JS for portfolio and about 1 day to build the blog. I followed along with <a href="https://docs.astro.build/en/tutorial/0-introduction/" target="_blank" class="underline underline-offset-8">this tutorial</a> for building the blog and setting up all the routing and stuff. It was very easy and very straight-forward.
+Well, building this site was not that hard because I just migrated it from Next.JS and before I was using tailwind to style my components so it was mostly just copy-paste. It was piece of cake because Astro has great integration for other frameworks. It took me about 1 day to complete the migration from Next.JS for portfolio and about 1 day to build the blog. I followed along with <a href="https://docs.astro.build/en/tutorial/0-introduction/" target="_blank" class="underline underline-offset-[6px]">this tutorial</a> for building the blog and setting up all the routing and stuff. It was very easy and very straight-forward.
 
 <h2 class="heading-2">What's next?</h2>
 
