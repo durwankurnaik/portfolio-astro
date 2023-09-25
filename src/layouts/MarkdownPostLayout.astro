@@ -1,0 +1,32 @@
+---
+import { VsCalendar } from "solid-icons/vs";
+import { FaSolidAngleLeft } from "solid-icons/fa";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <main class="max-w-screen-lg m-auto mt-10 md:mt-16">
+    <div class="flex flex-col gap-4 mb-10">
+      <a href="/blog">
+        <span class="span flex gap-2 items-center cursor-pointer">
+          <FaSolidAngleLeft /> Go back
+        </span>
+      </a>
+      <h1 transition:name="title" class="heading-1">
+        {frontmatter.title}
+      </h1>
+      <span transition:name="date" class="span flex gap-2 items-center">
+        <VsCalendar /> Posted on: {frontmatter.pubDate}
+      </span>
+      <span transition:name="description" class="span">
+        {frontmatter.description}
+      </span>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <slot />
+    </div>
+  </main>
+</Layout>

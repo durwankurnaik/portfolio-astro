@@ -117,6 +117,10 @@ ul > li > a {
   @apply font-bold;
 }
 
+.date {
+  @apply italic font-semibold;
+}
+
 .button {
   @apply cursor-pointer bg-[var(--complementary-color)] text-[var(--bg-color)] rounded-lg px-4 py-2 w-40 text-center;
 }
