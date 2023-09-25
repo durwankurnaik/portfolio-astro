@@ -15,18 +15,13 @@ const allPosts = await Astro.glob("./posts/*.md");
     {
       allPosts.map((post) => (
         <div class="flex flex-col gap-2 mt-12">
-          <h1
-            transition:name="title"
-            class="heading-1 hover:underline underline-offset-8 cursor-pointer inline"
-          >
+          <h1 class="heading-1 hover:underline underline-offset-8 cursor-pointer inline">
             <a href={post.url}>{post.frontmatter.title}</a>
           </h1>
-          <span transition:name="date" class="date flex items-center gap-2">
+          <span class="date flex items-center gap-2">
             <VsCalendar /> Posted on: {post.frontmatter.pubDate}
           </span>
-          <span transition:name="description" class="span">
-            {post.frontmatter.description}
-          </span>
+          <span class="span">{post.frontmatter.description}</span>
         </div>
       ))
     }

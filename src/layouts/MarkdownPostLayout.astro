@@ -14,13 +14,13 @@ const { frontmatter } = Astro.props;
           <FaSolidAngleLeft /> Go back
         </span>
       </a>
-      <h1 transition:name="title" class="heading-1">
+      <h1 class="heading-1">
         {frontmatter.title}
       </h1>
-      <span transition:name="date" class="span flex gap-2 items-center">
+      <span class="span flex gap-2 items-center">
         <VsCalendar /> Posted on: {frontmatter.pubDate}
       </span>
-      <span transition:name="description" class="span">
+      <span class="span">
         {frontmatter.description}
       </span>
     </div>
