@@ -101,7 +101,7 @@ const Navbar = () => {
           >
             <For each={Routes}>
               {(route) => (
-                <li>
+                <li onclick={handleMenuChange}>
                   <a href={route.path}>{route.name}</a>
                 </li>
               )}
