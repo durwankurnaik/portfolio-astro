@@ -49,7 +49,7 @@ const SkillsData: SkillsDataType[] = [
 
 const Skills = () => {
   return (
-    <section class="pt-8 md:pt-16" id="skills">
+    <section class="pt-10 md:pt-16" id="skills">
       <h1 class="heading-1 mb-10 md:mb-16 text-center">Skills</h1>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-6 sm:gap-x-8 sm:gap-y-12 opacity-80">
         {SkillsData.map((skill) => (

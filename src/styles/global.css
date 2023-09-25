@@ -1,5 +1,4 @@
 /* Colors */
-
 /*
 First Iteration versions
 --bg-color: #d3d3d3;
@@ -44,8 +43,8 @@ body.light {
   --bg-color-secondary: var(--bg-color-secondary-light);
 }
 
-/* Fonts */
 
+/* Fonts */
 /* Register your custom font family and tell the browser where to find it. */
 @font-face {
   font-family: "IBM Plex Sans";
@@ -63,6 +62,12 @@ body.light {
   font-style: normal;
   font-display: swap;
 }
+/* 
+Some other good fonts would be 
+  - Alegreya Sans
+  - Space Grotesk
+  - Andika
+*/
 
 html,
 body {
@@ -75,6 +80,9 @@ body {
   }
 }
 
+
+/* Visual enhances */
+/* Hide scrollbar for Chromium based browsers */
 body::-webkit-scrollbar {
   display: none;
 }
@@ -85,8 +93,14 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Typography */
+/* Change the color and background color of the selected text */
+::selection {
+  color: var(--bg-color); /* Change this to your desired color */
+  background-color: var(--text-color); /* Change this to your desired background color */
+}
 
+
+/* Typography */
 ul > li > a {
   @apply uppercase font-semibold cursor-pointer hover:underline underline-offset-8;
 }
@@ -104,7 +118,7 @@ ul > li > a {
 }
 
 .button {
-  @apply bg-[var(--complementary-color)] text-[var(--bg-color)] rounded-lg  px-4 py-2 w-40;
+  @apply cursor-pointer bg-[var(--complementary-color)] text-[var(--bg-color)] rounded-lg px-4 py-2 w-40 text-center;
 }
 
 .formInputs {

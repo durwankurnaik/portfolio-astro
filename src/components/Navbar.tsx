@@ -20,24 +20,28 @@ const Navbar = () => {
   const [isDark, setIsDark] = createSignal(false);
   const [hambergerVisible, setHambergerVisible] = createSignal(false);
 
-  const toggleDarkMode = () => {
-    setIsDark((prev) => !prev);
+  const handleMenuChange = () => {
+    setHambergerVisible(!hambergerVisible());
   };
 
-  const handleMenuChange = () => {
-    setHambergerVisible((prev) => !prev);
+  const toggleDark = () => {
+    setIsDark(!isDark());
   };
 
   createEffect(() => {
-    const changeColorModes = () => {
-      if (isDark()) {
-        (document.getElementById("body")!.classList as any) = "dark";
-      } else if (!isDark()) {
-        (document.getElementById("body")!.classList as any) = "light";
-      }
-    };
+    if (localStorage.getItem("colorMode") === "dark") {
+      setIsDark(true);
+    }
+  }, []);
 
-    changeColorModes();
+  createEffect(() => {
+    if (isDark()) {
+      (document.getElementById("body")!.classList as any) = "dark";
+      localStorage.setItem("colorMode", "dark");
+    } else if (!isDark()) {
+      (document.getElementById("body")!.classList as any) = "light";
+      localStorage.setItem("colorMode", "light");
+    }
   }, [isDark()]);
 
   return (
@@ -95,11 +99,13 @@ const Navbar = () => {
             z-10
           "
           >
-            {Routes.map((route) => (
-              <a href={route.path}>
-                <li onClick={handleMenuChange}>{route.name}</li>
-              </a>
-            ))}
+            <For each={Routes}>
+              {(route) => (
+                <li>
+                  <a href={route.path}>{route.name}</a>
+                </li>
+              )}
+            </For>
           </ul>
         </Show>
 
@@ -116,7 +122,7 @@ const Navbar = () => {
 
         {/* Light/Dark Mode toggle */}
         <div
-          onClick={toggleDarkMode}
+          onClick={toggleDark}
           class="z-10 border border-[var(--border-color)] rounded-md px-6 py-2 cursor-pointer"
         >
           <Show when={isDark()} fallback={<BsMoonStars />}>
