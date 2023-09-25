@@ -20,7 +20,7 @@ const allPosts = await Astro.glob("./posts/*.md");
               {post.frontmatter.title}
             </a>
           </h1>
-          <span class="flex items-center gap-2">
+          <span class="span flex items-center gap-2">
             <VsCalendar /> Posted on: {post.frontmatter.pubDate}
           </span>
           <span class="span">{post.frontmatter.description}</span>
