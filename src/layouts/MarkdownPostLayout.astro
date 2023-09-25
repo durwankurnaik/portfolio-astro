@@ -6,8 +6,8 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title}>
-  <main class="max-w-screen-lg m-auto mt-10 md:mt-16">
+<Layout title={`Blog | ${frontmatter.title}`}>
+  <main class="max-w-screen-lg m-auto mt-10 md:mt-16 mb-8 md:mb-4">
     <div class="flex flex-col gap-4 mb-10">
       <a href="/blog">
         <span class="span flex gap-2 items-center cursor-pointer">

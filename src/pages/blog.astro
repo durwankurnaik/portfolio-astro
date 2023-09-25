@@ -6,8 +6,8 @@ const allPosts = await Astro.glob("./posts/*.md");
 ---
 
 <Layout title="Blog | Durwankur S. Naik">
-  <main class="max-w-screen-lg m-auto">
-    <div class="flex flex-col gap-2 mt-10 md:mt-16">
+  <main class="max-w-screen-lg m-auto mt-10 md:mt-16 mb-8 md:mb-4">
+    <div class="flex flex-col gap-2">
       <h1 class="heading-1">Posts</h1>
       <span class="span">All the blogs I've posted</span>
     </div>
@@ -15,8 +15,10 @@ const allPosts = await Astro.glob("./posts/*.md");
     {
       allPosts.map((post) => (
         <div class="flex flex-col gap-2 mt-12">
-          <h1 class="heading-1 hover:underline underline-offset-8 cursor-pointer inline">
-            <a href={post.url}>{post.frontmatter.title}</a>
+          <h1 class="heading-1">
+            <a class="hover:underline underline-offset-8" href={post.url}>
+              {post.frontmatter.title}
+            </a>
           </h1>
           <span class="date flex items-center gap-2">
             <VsCalendar /> Posted on: {post.frontmatter.pubDate}
