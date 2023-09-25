@@ -73,7 +73,7 @@ html,
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif; /* This font doesn't work on Firefox browser */
 
   @media (min-width: 640px) {
     font-size: 18px;
@@ -115,10 +115,6 @@ ul > li > a {
 
 .span {
   @apply font-bold;
-}
-
-.date {
-  @apply italic font-semibold;
 }
 
 .button {
