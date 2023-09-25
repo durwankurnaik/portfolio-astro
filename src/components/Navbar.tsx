@@ -29,6 +29,7 @@ const Navbar = () => {
   };
 
   createEffect(() => {
+    // finding whether the user's previous preference for dark mode is saved or not
     if (localStorage.getItem("colorMode") === "dark") {
       setIsDark(true);
     }
@@ -51,9 +52,9 @@ const Navbar = () => {
         <a href="/">
           <Show
             when={isDark()}
-            fallback={<img src="/images/logo.png" alt="logo" width={80} />}
+            fallback={<img src="/images/logo.webp" alt="logo" width={80} />}
           >
-            <img src="/images/logo-white.png" alt="logo" width={80} />
+            <img src="/images/logo-white.webp" alt="logo" width={80} />
           </Show>
         </a>
       </div>
