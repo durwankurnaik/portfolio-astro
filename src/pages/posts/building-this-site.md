@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Initial Commit: Building this site"
-pubDate: 25-09-2023
+pubDate: 2023-09-25
 description: "My Experience of building this portfolio site in Astro"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The full Astro logo."
-tags: ["blogging", "portfolio"]
+tags: ["coding", "portfolio"]
 ---
 
 <h2 class="heading-2">Hola Amigo!!!</h2>

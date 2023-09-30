@@ -1,5 +1,6 @@
 ---
 import { VsCalendar } from "solid-icons/vs";
+import { BsAlarm } from "solid-icons/bs";
 import { FaSolidAngleLeft } from "solid-icons/fa";
 import Layout from "./Layout.astro";
 
@@ -18,7 +19,9 @@ const { frontmatter } = Astro.props;
         {frontmatter.title}
       </h1>
       <span class="span flex gap-2 items-center">
-        <VsCalendar /> Posted on: {frontmatter.pubDate}
+        <VsCalendar /> Posted on: {frontmatter.pubDate.slice(0, 10)} | <BsAlarm
+        />
+        {frontmatter.minutesRead}
       </span>
       <span class="span">
         {frontmatter.description}

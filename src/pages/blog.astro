@@ -2,7 +2,12 @@
 import { VsCalendar } from "solid-icons/vs";
 import Layout from "../layouts/Layout.astro";
 
-const allPosts = await Astro.glob("./posts/*.md");
+let allPosts = await Astro.glob("./posts/*.md");
+// sorting the array of posts in descending order of publish date i.e. newest first
+allPosts.sort(
+  (a, b) =>
+    Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate)
+);
 ---
 
 <Layout title="Blog | Durwankur S. Naik">
@@ -21,7 +26,7 @@ const allPosts = await Astro.glob("./posts/*.md");
             </a>
           </h1>
           <span class="span flex items-center gap-2">
-            <VsCalendar /> Posted on: {post.frontmatter.pubDate}
+            <VsCalendar /> Posted on: {post.frontmatter.pubDate.slice(0, 10)}
           </span>
           <span class="span">{post.frontmatter.description}</span>
         </div>
