@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Gojo Satoru vs Ryomen Sukuna"
 pubDate: 2023-09-30
-description: "Some of my thoughts on Gojo vs Sukuna, The Battle of the Strongest"
+description: "(SPOILER ALERT) Some of my thoughts on Gojo vs Sukuna, The Battle of the Strongest"
 image:
   url: "https://docs.astro.build/assets/full-logo-light.png"
   alt: "The full Astro logo."
